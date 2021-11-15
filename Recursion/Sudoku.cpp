@@ -35,11 +35,11 @@ bool Sudoku(vvi &arr,int i,int j){
         return Sudoku(arr,i+1,1);
     }
     if(arr[i][j]!=0)return Sudoku(arr,i,j+1);
-    for(int x=1;x<=9;x++){
-    if(help(i,j,arr,x)){
-        arr[i][j] = x;
-        if(Sudoku(arr,i,j+1))return 1;
-    }
+        for(int x=1;x<=9;x++){
+        if(help(i,j,arr,x)){
+            arr[i][j] = x;
+            if(Sudoku(arr,i,j+1))return 1;
+        }
     }
     //backtracking
     arr[i][j] = 0;

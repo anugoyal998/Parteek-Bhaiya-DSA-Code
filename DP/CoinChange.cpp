@@ -58,8 +58,8 @@ int main(){
     loop(i,0,n)cin>>arr[i];
     int v;
     cin>>v;
-    // cout<<coinChange(arr,v);
-    // cout<<coin(arr,v);
+    cout<<coinChange(arr,v)<<endl;
+    cout<<coin(arr,v)<<endl;
     cout<<coinC(arr,v)<<endl;
 
      return 0;
