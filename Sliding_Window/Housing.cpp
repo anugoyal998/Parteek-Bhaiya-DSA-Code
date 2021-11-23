@@ -33,33 +33,15 @@ int main()
     int st = 0;
     int ed = 0;
     int sum = 0;
-    while (ed < n)
-    {
-        sum += arr[ed];
-        if (sum >= k)
-        {
-            while (st < ed and sum >= k)
-            {
-                if (sum == k)
-                {
-                    ans.push_back({st, ed});
-                }
-                sum -= arr[st];
-                st++;
-            }
-        }
+    while(ed<n){
+        sum+=arr[ed];
         ed++;
-    }
-    if (sum >= k)
-    {
-        while (st < ed and sum >= k)
-        {
-            if (sum == k)
-            {
-                ans.push_back({st, ed});
-            }
-            sum -= arr[st];
+        while(sum>k and st<ed){
+            sum-=arr[st];
             st++;
+        }
+        if(sum==k){
+            ans.pb({st,ed-1});
         }
     }
     for(auto i:ans){
