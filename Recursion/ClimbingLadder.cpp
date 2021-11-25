@@ -9,16 +9,16 @@ using namespace std;
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vi>
-ll ways(int i,int n){
-    if(i>n)return 0;
-    if(i==n)return 1;
-    return ways(i+1,n) + ways(i+2,n) + ways(i+3,n);  
+ll ways(int n){
+    if(n==0)return 1;
+    if(n<0)return 0;
+    return ways(n-1) + ways(n-2) + ways(n-3);
 }
 int main(){
     //given a ladder containing N steps, you can take a jump of
     // 1,2 or 3 at each step. Find the number of ways to climb the ladder.
     int n ;
     cin>>n;
-    cout<<ways(0,n);
+    cout<<ways(n);
      return 0;
 }
